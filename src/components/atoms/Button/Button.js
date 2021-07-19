@@ -8,6 +8,9 @@ export const Button = ({ label, styled, icon, ...args }) => {
         {...args}
     >
         {/* {icon && } */}
+        <i className="icon">
+            download
+        </i>
         {label}
 
     </ButtonStyle>)
