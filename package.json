@@ -1,7 +1,22 @@
 {
-  "name": "ui-components",
+  "author": "Luisa Fernanda Malaver",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luisa-Mala/ui-components.git"
+  },
+  "name": "@luisa-mala/ui-components",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "Library ui-components React",
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -18,7 +33,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "clean": "rimraf dist",
+    "compile": "npm run clean && cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
   },
   "eslintConfig": {
     "extends": [
@@ -36,6 +53,10 @@
       }
     ]
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
@@ -54,6 +75,13 @@
     "@storybook/addon-links": "^6.3.4",
     "@storybook/node-logger": "^6.3.4",
     "@storybook/preset-create-react-app": "^3.2.0",
-    "@storybook/react": "^6.3.4"
+    "@storybook/react": "^6.3.4",
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-syntax-jsx": "^7.12.1",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3"
   }
 }
